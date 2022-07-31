@@ -21,6 +21,10 @@ class PlayersProfileController extends Controller
     // public function edit(\App\User $user){
     //     return 'works';
     // }
+    public function create(){
+        return view('adminPlayer.players_profile.create_profile');
+
+    }
 
     public function edit(User $user)
     {
@@ -41,5 +45,8 @@ class PlayersProfileController extends Controller
 
         auth()->$user->profile->update($data);
         return redirect("/player-profile/{$user->id}");
+    }
+    public function view(){
+        return view('users.players.profile');
     }
 }

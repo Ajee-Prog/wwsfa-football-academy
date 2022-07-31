@@ -15,7 +15,18 @@ class CreatePlayerProfilesTable extends Migration
     {
         Schema::create('player_profiles', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id');
+            $table->string('nationality');
+            $table->string('position');
+            $table->string('height');
+            $table->string('weight');
+            $table->string('image');
+            $table->string('curent_team');
+            $table->string('birthday');
+            $table->string('age');
             $table->timestamps();
+
+            $table->index('user_id');
         });
     }
 

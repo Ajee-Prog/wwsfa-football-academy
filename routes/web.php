@@ -16,12 +16,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/welcome', function () {
+    return view('welcomme');
+});
 // Route::resource('/Admin/Players/create', 'App\Http\Controllers\AdminPlayerController::class create');
  Route::get('/Admin/Players/create', [App\Http\Controllers\AdminPlayerController::class, 'create'])->name('admin.create');
+ Route::get('/Admin/Players/profile/create', [App\Http\Controllers\PlayersProfileController::class, 'create'])->name('admin.create');
+ Route::get('/Users/Players/profile/', [App\Http\Controllers\PlayersProfileController::class, 'view'])->name('user.show');
 
 Auth::routes();
 
- Route::get('/home', 'HomeController@index')->name('home');
+ Route::get('/teams', 'TeamsController@index')->name('team');
+ Route::get('/homee', 'HomeController@index')->name('home');
  Route::get('/p/create', 'PostsController@create');
  Route::get('/p/{post}', 'PostsController@show');
  Route::post('/p', 'PostsController@store');

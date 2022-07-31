@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container bg-warning">
+    <a href="{{url('/homee')}}">back to home</a>
     <form action="/p" enctype="multipart/form-data" method="POST">
         @csrf
         <div class="row">
